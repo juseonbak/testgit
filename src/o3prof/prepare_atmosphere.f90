@@ -277,7 +277,7 @@ SUBROUTINE get_tb(ozref,std, which_tb)
    stds (:,:,:)   = stds2(:,:,:)
    mtropz(:,:)    = mtropz2(:,:)
   ENDIF
-
+    ! check
   ! ** interpolation for lat, mon** 
 
   CALL get_monfrac(nmon, the_month, the_day, nm, monfrac, monin)
