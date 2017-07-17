@@ -1,0 +1,85 @@
+  0 AMUNDSEN-SCOTT  -90.00  169.00    2.00       ECC        46  AVDC-HDF
+  1       BELGRANO  -77.85  -34.55    0.00        NA       129   Envisat
+  2        MCMURDO  -77.85  166.67    0.00        NA        80     Other
+  3       NEUMAYER  -70.65   -8.26    0.00       ECC       228     WOUDC
+  4          SYOWA  -69.00   39.60    0.00CARBON-IOD       137     WOUDC
+  5          DAVIS  -68.58   77.97    0.00       ECC        27     WOUDC
+  6DUMONT DURVILLE  -66.41  140.01    0.00        NA        64   Envisat
+  7       MARAMBIO  -64.23  -56.72    0.00       ECC       205   Envisat
+  8         LAUDER  -45.04  169.68    0.00       ECC       118     WOUDC
+  9          IRENE  -25.90   28.22    1.00       ECC        68     WOUDC
+ 10     LA REUNION  -21.06   55.48    0.00       ECC        76     WOUDC
+ 11           FIJI  -18.13  178.40    0.00       ECC        21  AVDC-HDF
+ 12          SAMOA  -14.23 -170.56    0.00       ECC        96     WOUDC
+ 13ASCENSION ISLAN   -7.98  -14.42    0.00       ECC       156  AVDC-HDF
+ 14           JAVA   -7.50  112.60    0.00CARBON-IOD        33  AVDC-HDF
+ 15          NATAL   -5.42  -35.38    0.00       ECC       101     WOUDC
+ 16        MALINDI   -2.99   40.19    0.00       ECC        20     WOUDC
+ 17        NAIROBI   -1.27   36.80    1.00       ECC       123     WOUDC
+ 18  SAN CRISTOBAL   -0.92  -89.60    0.00       ECC        78  AVDC-HDF
+ 19         SEPANG    2.73  101.70    0.00       ECC        90     WOUDC
+ 20     PARAMARIBO    5.81  -55.21    0.00       ECC       105     WOUDC
+ 21        COTONOU    6.21    2.23    0.00       ECC        93     WOUDC
+ 22     TRIVANDRUM    8.47   76.95    0.00INDIAN-SON         9     WOUDC
+ 23        HEREDIA   10.00  -84.11    1.00       ECC        67     WOUDC
+ 24       BARBADOS   13.20  -59.50    0.00       ECC        26AVDC-IONS0
+ 25           UNAM   19.33  -99.18    2.00        NA        10AVDC-IONS0
+ 26           HILO   19.43 -155.04    0.01       ECC       204  AVDC-HDF
+ 27      HONG KONG   22.31  114.17    0.00       ECC       104     WOUDC
+ 28           NAHA   26.20  127.70    0.00CARBON-IOD       117     WOUDC
+ 29       RV BROWN   26.33  -87.90    0.00        NA        22AVDC-IONS0
+ 30      NEW DELHI   28.30   77.10    0.00INDIAN-SON         5     WOUDC
+ 31     SANTA CRUZ   28.46  -16.26    0.00       ECC       150     Other
+ 32        HOUSTON   29.72  -95.40    0.00        NA        65  AVDC-HDF
+ 33COLLEGE STATION   30.65  -96.30    0.00        NA         1  AVDC-HDF
+ 34      KAGOSHIMA   31.60  130.60    0.00CARBON-IOD        23     WOUDC
+ 35       BEAUMONT   31.76  -94.66    0.00        NA         4  AVDC-HDF
+ 36        ISFAHAN   32.51   51.70    1.00       ECC        37     WOUDC
+ 37      HOLTVILLE   32.80 -115.40    0.00        NA        17AVDC-IONS0
+ 38 TABLE MOUNTAIN   34.40 -117.70    2.00        NA        27AVDC-IONS0
+ 39        SOCORRO   34.60 -106.90    1.00        NA        25AVDC-IONS0
+ 40     HUNTSVILLE   34.72  -86.64    0.00       ECC       109  AVDC-HDF
+ 41         POHANG   36.02  129.23    0.00       ECC       198       KMA
+ 42         TATENO   36.10  140.10    0.00CARBON-IOD       131     WOUDC
+ 43         LAMONT   36.60  -97.48    0.00       ECC        17  AVDC-WFF
+ 44 WALLOPS ISLAND   37.93  -75.47    0.00       ECC       218     WOUDC
+ 45     BELTSVILLE   39.04  -76.52    0.00        NA        12AVDC-IONS0
+ 46        BOULDER   39.95 -105.20    1.00       ECC       116  AVDC-HDF
+ 47        BARAJAS   40.47   -3.58    0.00       ECC       131     WOUDC
+ 48  TRINIDAD HEAD   40.80 -124.16    0.00       ECC        66  AVDC-HDF
+ 49   NARRAGANSETT   41.49  -71.42    0.00       ECC       104  AVDC-HDF
+ 50     WALSINGHAM   42.64  -80.60    0.00       ECC        20AVDC-IONS0
+ 51        SAPPORO   43.10  141.30    0.00CARBON-IOD       118     WOUDC
+ 52       YARMOUTH   43.87  -66.11    0.00       ECC       110     WOUDC
+ 53        PARADOX   43.92  -73.64    0.00        NA         5AVDC-IONS0
+ 54 HAUTE PROVENCE   43.94    5.71  680.00       ECC         2   Envisat
+ 55         EGBERT   44.23  -79.78    0.00       ECC       132     WOUDC
+ 56   SABLE ISLAND   44.95  -59.92    0.00       ECC        28AVDC-IONS0
+ 57        PAYERNE   46.49    6.57    0.00       ECC       553     WOUDC
+ 58HOHENPEISSENBER   47.80   11.02    0.00BREWER-MAS       435     WOUDC
+ 59        KELOWNA   49.93 -119.40    0.00       ECC       167     WOUDC
+ 60          PRAHA   50.01   14.45    0.00       ECC       175     WOUDC
+ 61    BRATTS LAKE   50.20 -104.70    0.00       ECC       162     WOUDC
+ 62          UCCLE   50.80    4.35    0.00       ECC       478     WOUDC
+ 63        DE BILT   52.10    5.18    0.00       ECC       144   Envisat
+ 64     LINDENBERG   52.21   14.12    0.00       ECC       198     WOUDC
+ 65      LEGIONOWO   52.40   20.97    0.00       ECC       229     WOUDC
+ 66     GOOSEE BAY   53.31  -60.36    0.00       ECC       153     WOUDC
+ 67       EDMONTON   53.55 -114.11    0.00       ECC       125     WOUDC
+ 68  KUEHLUNGSBORN   54.12   11.77    0.00        NA        10        EC
+ 69    JAEGERSBORG   55.77   12.53    0.00        NA         2        EC
+ 70      CHURCHILL   58.74  -94.07    0.00       ECC       118     WOUDC
+ 71        LERWICK   60.14   -1.18    0.00       ECC       192        EC
+ 72      JOKIOINEN   60.80   23.50    0.00       ECC        52        EC
+ 73        YAKUTSK   62.03  129.63    0.00       ECC        17        EC
+ 74         ORLAND   63.42    9.24    0.00        NA        47        EC
+ 75       KEFLAVIK   63.97  -22.60    0.00        NA        67   Envisat
+ 76      SALEKHARD   66.53   66.67    0.00        NA        37   Envisat
+ 77      SODANKYLA   67.39   26.65    0.00       ECC       297   Envisat
+ 78   SCORESBYSUND   70.50  -22.00    0.00       ECC       196   Envisat
+ 79         SUMMIT   72.60  -38.50    3.00       ECC        19  AVDC-HDF
+ 80       RESOLUTE   74.71  -94.97    0.00       ECC        95     WOUDC
+ 81          THULE   76.53  -68.74    0.00       ECC        51        EC
+ 82     NY ALESUND   78.93   11.95    0.00       ECC       287     WOUDC
+ 83         EUREKA   79.99  -85.94    0.00       ECC       233     WOUDC
+ 84          ALERT   82.50  -62.33    0.00       ECC       158     WOUDC

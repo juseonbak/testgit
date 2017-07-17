@@ -1,0 +1,271 @@
+# ====================================== #
+# BOAS test for SAO PGEs: A basic O3 fit #
+# ====================================== #
+
+# Currently supported: OMI
+Satellite instrument name
+OMI
+
+Reduce spectral resolution
+F      ; T: Reduce spectral resolution; F: Original
+1      ; which slit 1: Symmetric Gaussian 2. Triangular
+0.98681265 1.0655328  ; additional slit width (FWHM) for each channel
+T      ; T: read wavelength grid from file (nex line), F: generated based sample rate, FWHM
+INP/SBUV2_wavelengths.dat
+3      ; sample rate (per FWHM)
+0.05   ; fine grid interval (before convolution), if negative or greater than original, then use original
+
+# Ignored for all instruments but GOME
+# Note the bands are in increasing order and no repetition, no internal sort/check
+# Within in the same band (e.g., 1a & 1b, no overlapping between them)
+OMI radiance bands to be used ; (band 1: UV-1; band 2: UV-2; band 3: VIS)
+T   1           # Coadd across track, # of observations to be coadded
+T   1           # Coadd along track,  # of observations to be coadded
+T               # Filter spectral pixels around Mg and Mg-II (280 and 285 nm)
+2   T  F        # # of bands, spectral coadd? wavelength calibration before coadd? 
+1  269. 309. 5 2
+2  311. 330. 2 2
+
+2  312.0 330.0  2  2 
+
+
+2  310. 345     5  2
+2  311. 338.0   1  1 
+
+1  271. 309.0   5  2
+2  311. 338.0   1  1   
+
+# ---------------------------------------------------------------------------
+# The following block requires two input files: (1) solar, and (2) earthshine 
+# (those can be the same files)GOME-1997-apr-09-103.el1  GOME-1998-oct-03-031_ch2
+# ---------------------------------------------------------------------------
+Three varialbes below Level 1 input files
+1. T: read next two lines; F: read from file on next line 
+2. T: full orbit F: pixel (only apply to ozone profile)
+3. T: retrieval at 320 x 40 km2 for ozone profile (only apply to ozone profile, full orbit)
+
+Level 1 input files
+F T F 
+INP/L1L2_fnames.inp 
+/pool/cluster1/tkurosu/OMI_L1b_Data/BIRR/Jul2005/OMI-Aura_L1-OML1BIRR_2005m0702t0134-o05123_v002-2005m0702t165320.he4
+/pool/cluster1/tkurosu/OMI_L1b_Data/BRUG/Jul2005/02/OMI-Aura_L1-OML1BRUG_2005m0702t0134-o05123_v002-2005m0702t165320.he4
+/pool/cluster1/tkurosu/OMI_L2_Data/OMCLDRR/Jul2005/OMCLDRR-o05123.he5
+
+Level 2 output file
+../testout/OMIO3PROF_o05123.out
+
+# If 0. Write ASCII output, 1. Write short HDF output, 2. Write long HDF output 3. Write HDF-EOS5 output
+# Note: 0: works for GOME-1 and OMI, 1 and 2 works for GOME-2 only, and 3 works for OMI only
+Write HDF output?
+0
+
+# If Ozone profile retrieval, line "Molecule(s) to fit" will not be read
+Ozone profile retrieval
+.TRUE.
+INP/ozprof.inp
+
+Reference spectra directory
+/home/xliu/OzoneFit/tbl/
+
+# T, P, Aerosol, Climatology, Cloud, Terrain Height, Albedo
+Atmospheric database directory
+/home/xliu/OzoneFit/ATMOS/
+
+Air mass factor table
+F
+OMSAO_BrO-AirMassFactors.dat
+ 
+Molecule(s) to fit
+o3_t1 o3_t2
+
+General fitting parameters
+ T F T F      # use backup, use solar composite, median/pc0, all orbits / first 7 orbits
+ 0            # 0: Symmetric Gauss 1: Asymmetric Gauss  2. Voigt  3: Tirangle (symmetric) 4: OMI-preflight slit
+ 0.01         # Slit truncation limit
+ F F F F  F   # variable slit, wavelength calibration, second iter for sol wavcal, smooth cali, slit_rad
+ 31 10 T      # slit fit pts, slit step points, on-line slit fit (21, 5)
+ 21 6  T      # wavcal fit pts, wavcal step points, on-line wavcal cal (15, 3)
+ F            # SMOOTH spectra?
+ F            # DOAS fitting?
+ T            # Use measurement error
+ -5 -5        # First + last OMI scan lines  (- values for "all")
+ 43 44        # First + last OMI cross track pixels (- values for "all")
+ 1.0E-06      # pseudo rank tolerance constant  (TOL = SQRT(mach. prec.))
+ 1.0E-02      # relative convergence constant (EPSREL = SQRT(mach. prec.))
+ 1.0E-02      # absolute convergence constant (EPSABS = mach. prec.)
+ 1.0E-02      # parameterconvergence constant (EPSX   = SQRT(mach. prec.))
+
+OMSAO_KPNO_SolarSpec_GOME-range.dat   
+OMSAO_NKPNO_SolarSpec_ReCal.dat 
+OMSAO_NKPNO_Kelly_SolarSpec.dat   
+                                      
+Solar calibration parameters
+OMSAO_NKPNO_SolarSpec_ReCal.dat 
+ F           # do solar weighting?
+ 10          # maximum number of iterations for (solar) wvl.cal. (<0: default)
+bl0  0 0 0 1.0E-5 -1.0E+99   1.0E+99
+bl1  0 0 0 -1.0E-6  -1.0E+99   1.0E+99
+bl2  0 0 0 1.0E-7   -1.0E+99  1.0E+99
+bl3  0 0 0 -1.0E-08  -1.0E+99  1.0E+99
+sc0  1 1 1  -1.0E+99  1.0E+99    
+sc1  1.0E-4  -1.0E+99   1.0E+99
+sc2  -5.43E-05 -1.0E+99   1.0E+99
+sc3  3.5E-6  -1.0E+99   1.0E+99
+sin  1.00E+00  -1.0E+99   1.0E+99
+hwe  0.3 -10.0E+00  10.0E+00                   # Gaussian HW@1/e
+asy  0 0 0 -0.04 -1.0E+99 1.0E+99            # Gaussian asymmetry
+shi  -1.00E-03 -1.0E+99 1.0E+99
+squ  0 0 0 1.0E-5 -0.01  0.01 
+vgl  0 0 0 0.03 0.03 0.03 0.067 -1.0E+99 1.0E+99     
+vgr  0 0 0 0.03  0.03 0.03 -1.0E+99 1.0E+99
+hwl  0 0 0 0.159  -1.0E+99 1.0E+99
+hwr  0 0 0 0.204  -1.0E+99 1.0E+99
+eoi 0 0 0  # end of input
+
+Radiance calibration parameters
+ F            # renormalize radiance spectrum?
+ F            # weight radiance spectrum?
+ 10            # maximum number of iterations for fitting (<0: default)
+ 100          # frequency of radiance wavelength calibration
+ 88.0         # maximum solar zenith angle to process
+ 0.0          # "Top of Atmosphere" height [km]
+ +0.1         # "phase" of undersampling spectrum
+bl0   0 0 0 -1.56  -1.0E+99   1.0E+99     
+bl1   0 0 0 -1.56  -1.0E+99   1.0E+99   
+bl2   0 0 0 1.590E-8   -1.0E+99   1.0E+99
+bl3   0 0 0 -5.56E-6   -1.0E+99   1.0E+99
+sc0   1.0 1.0 1.0 -1.0E+99 1.0E+99    
+sc1   0 0 0 -.01E   -1.0E+99   1.0E+99
+sc2   0 0 0 +0.0025  -1.0E99 1.0E99  -1.0000004E-04   -1.0E+99   1.0E+99
+sc3   0 0 0 -0.01  -1.0E99 1.0E99 5.0000000E-05   -1.0E+99   1.0E+99
+sin   1.0 1.0 1.0 -1.0E99 1.0E99 0.0 1.0 0.7 0.7
+hwe   0.0 0.0 0.0   # Gaussian HW@1/e
+asy   0.0 0.0 0.0   # Gaussian asymmetry
+shi   0 0 0 1.83E-3 -1.0E+99  1.0E+99
+squ   0.00 0.00  00.0         
+vgl   0.00 0.00 0.00
+vgr   0.00 0.00 0.00
+hwl   0.00 0.00 0.00
+hwr   0.00 0.00 0.00
+eoi   0 0 0           #  end of input
+
+********** Some Ring Spectra **********
+GTRING_gomesolar_sza40.dat 
+OMSAO_Ring0_Spectrum_noslit.dat 
+CHRIS_RING_Spectrum_SZA43.dat
+OMSAO_Zero_Spec.dat    lidort_rrs_sza40.dat
+OMSAO_SO2_295K_SAO-IASB.dat
+OMSAO_SO2_scia_fm_293.dat
+
+Radiance fitting parameters
+no2_t1
+OMSAO_NO2_220K_noslit.dat
+ad1    0 0 0 
+lbe    0 0 0 2.62E-04 -1.0E+99 1.0E+99
+ad2    0 0 0 
+no2s   0 0 0   -1.0E+99 1.0E+99
+so2   
+OMSAO_SO2_295K_SAO-IASB.dat
+ad1    0 0 0 
+lbe    0 0 0 8.43E-05 -1.0E+99 1.0E+99  OMSAO_SO2_295K_SAO-IASB.dat
+ad2    0 0 0 
+so2s   0 0 0 -1.0E+99 1.0E+99  OMSAO_SO2_scia_fm_293.dat
+so2v   
+OMSAO_SO2_scia_fm_273.dat
+ad1    0 0 0 
+lbe    0 0 0 8.43E-05 -1.0E+99 1.0E+99  OMSAO_SO2_295K_SAO-IASB.dat
+ad2    0 0 0 
+so2vs  0 0 0  -1.0E+99 1.0E+99  OMSAO_SO2_scia_fm_293.dat
+bro
+OMSAO_BrO_228K_o3prof_noslit.dat
+ad1    0 0 0 
+lbe    5.67D-5 -1.0E+99 1.0E+99
+ad2    0 0 0 
+bros   0 0 0  -1.0E+99 1.0E+99
+hcho
+OMSAO_HCHO_300K_Cantrell.dat
+ad1    0 0 0 
+lbe    0 0 0 1.00D-5 -1.0E+99 1.0E+99
+ad2    0 0 0 
+hchos  0 0 0  -1.0E+99 1.0E+99
+commod
+OMSAO_Zero_Spec.dat
+ad1    0 0 0 -1.0E+99  1.0E+99         ; UV1
+lbe    0 0 0 -1.0E+99 1.0E+99
+ad2    0 0 0 1.0  -1.0E+99 1.0E+99 
+coms   0 0 0 0.001 -1.0E+99 1.0E+99
+comod1
+OMSAO_Zero_Spec.dat
+ad1    0 0 0 -1.0E+99  1.0E+99        ; UV2
+lbe    0 0 0 1.0 -1.0E+99 1.0E+99
+ad2    0 0 0 1.0  -1.0E+99 1.0E+99 
+com1s   0 0 0 0.001 -1.0E+99 1.0E+99
+end_of_input
+
+o2o2
+OMSAO_O4_294K_BISA.dat
+ad1    0.0E+00  0.0E+00  0.0E+00
+lbe    0 0 0 0 4.62053E-02   -1.0E+99    1.0E+99
+ad2    0.0000000E+00    0.0E+00        0.0E+00
+o4s    0 0 0 0.0001 -1.0E+99 1.0E+99
+ring
+OMSAO_Zero_Spec.dat
+ad1    0 0 0 0.03755 -1.0E+99 1.0E+99  ; Read first 3 numbers after ad1 (initial, lower and upper bounds)
+lbe    0 0 0 -0.9 -1.0E+99 1.0E+99   
+ad2    0 0 0
+rings  0 0 0 0.001  -1.0E+99 1.0E+99
+ring1
+OMSAO_Zero_Spec.dat
+ad1    0 0 0 0.03755 -1.0E+99 1.0E+99   
+lbe    0 0 0 -1.70 -1.0E+99 1.0E+99   
+ad2    0 0 0
+rings  0 0 0 0.001  -1.0E+99 1.0E+99
+usamp1
+OMSAO_Zero_Spec.dat
+ad1    0 0 0 1.0  -1.0E+99   1.0E+99 
+lbe    0 0 0 
+ad2    0 0 0
+uss1   0 0 0 1.00D-3 -1.0E+99 1.0E+99
+usamp2
+OMSAO_Zero_Spec.dat
+ad1    0 0 0 1.0 -1.0E+99        1.0E+99 
+lbe    0 0 0 
+ad2    0 0 0 
+uss2   0 0 0 1.00D-3 -1.0E+99 1.0E+99
+o2o2
+OMSAO_O4_000K.dat
+ad1    0.0E+00  0.0E+00  0.0E+00
+lbe    0 0 0 4.62053E-02   -1.0E+99    1.0E+99
+ad2    0.0000000E+00    0.0E+00        0.0E+00
+o4s    0 0 0 0.0001 -1.0E+99 1.0E+99
+o2gam
+OMSAO_o2gamma_240k_500mb.dat
+ad1    0.0E+00  0.0E+00  0.0E+00
+lbe    2.67053E-03   -1.0E+99    1.0E+99
+ad2    0.0000000E+00    0.0E+00        0.0E+00
+o2s    0.0001 -1.0E+99 1.0E+99
+h2o
+OMSAO_H2O_280k_900mb.dat
+ad1    0.0E+00  0.0E+00  0.0E+00
+lbe    8.173E-04   -1.0E+99    1.0E+99
+ad2    0.0000000E+00    0.0E+00        0.0E+00
+h2os   0.0001 -1.0E+99 1.0E+99
+commod
+OMSAO_Zero_Spec.dat
+ad1    0 0 0 -1.0E+99  1.0E+99
+lbe    0 0 0
+ad2    0 0 0 0.99  -1.0E+99 1.0E+99 
+coms   0 0 0 0.001 -1.0E+99 1.0E+99
+commod
+ch2b_gdp_oe_res_pc1.dat
+ad1    0 0 0 -1.0E+99  1.0E+99
+lbe    0 0 0
+ad2    0 0 0 0.99  -1.0E+99 1.0E+99 
+coms   0 0 0 0.001 -1.0E+99 1.0E+99 
+comod1
+ch2b_gdp_oe_res_pc2.dat
+ad1    0 0 0 -1.0E+99  1.0E+99
+lbe    0 0 0
+ad2    0 0 0 0.99  -1.0E+99 1.0E+99 
+com1s  0 0 0 0.001 -1.0E+99 1.0E+99 
+commod

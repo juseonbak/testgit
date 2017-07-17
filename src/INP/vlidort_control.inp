@@ -1,0 +1,261 @@
+Modes of operation
+==================
+
+VLIDORT - Do full Stokes vector calculation?
+t
+
+VLIDORT - Do nadir single scatter correction?
+f
+
+VLIDORT - Do outgoing single scatter correction?
+t
+
+VLIDORT - Do Full-up single scatter calculation?
+f
+
+VLIDORT - Do direct beam correction?
+f
+
+VLIDORT - Perform double convergence test?
+f
+
+Solar beam control
+==================
+
+VLIDORT - Plane-parallel treatment of direct beam?
+f
+
+VLIDORT - Perform internal Chapman function calculation?
+t
+
+VLIDORT - Beam path with refractive atmosphere?
+f
+
+Performance control
+===================
+
+VLIDORT - Rayleigh atmosphere only?
+f
+
+VLIDORT - Include Delta-M scaling?
+t
+
+VLIDORT - Additional Delta-M scaling for SS correction?
+t
+
+VLIDORT - Solution saving mode?
+t
+
+VLIDORT - Boundary value problem telescoping mode?
+t
+
+User-defined output control
+===========================
+
+directional output control
+--------------------------
+
+VLIDORT - Upwelling output?
+t
+
+VLIDORT - Downwelling output?
+f
+
+Stream angle and optical depth output control
+---------------------------------------------
+
+VLIDORT - User-defined viewing zenith angles?
+t
+
+mean-value output control
+-------------------------
+
+VLIDORT - Generate mean value output additionally?
+f
+
+VLIDORT - Generate only mean value output?
+f
+
+Write output control
+====================
+
+output flags
+------------
+
+VLIDORT - Debug write?
+f
+
+VLIDORT - Input control write?
+f
+
+VLIDORT - Input scenario write?
+f
+
+VLIDORT - Fourier component output write?
+f
+
+VLIDORT - Results write?
+f
+
+output filenames
+----------------
+
+VLIDORT - filename for input write
+ltest1_input.res
+
+VLIDORT - filename for scenario write
+ltest1_scenario.res
+
+VLIDORT - Fourier output filename
+ltest1_fourier.res
+
+VLIDORT - filename for main output
+ltest1_results.res
+
+Lambertian control
+------------------
+
+VLIDORT - Lambertian surface?
+t
+
+VLIDORT - Lambertian (isotropic) input albedo
+0.1
+
+BRDF control. This will be ignored in the Lambertian package.
+-------------------------------------------------------------
+
+VLIDORT - Number of bidirectional reflectance kernels
+3
+
+VLIDORT - Number of bidirectional reflectance streams
+25
+
+VLIDORT - Kernel names, indices, amplitudes, # parameters, parameters
+Ross-thin  2  0.30 2    0.000000    0.000000    0.000000
+Li-dense   5  0.10 2    2.000000    1.000000    0.000000
+Cox-Munk   9  0.10 2    0.079800    1.779556    0.000000
+
+(Above statement is Formatted. ( A10, I2, F6.2, I2, 3F12.6 )
+
+VLIDORT - Do shadow effect for glitter kernels?
+f
+
+VLIDORT - Do multiple reflectance for glitter kernels?
+f
+
+Stokes/streams/layers/moments
+=============================
+
+VLIDORT - Number of Stokes vector components
+3
+
+VLIDORT - Number of half-space streams
+3
+
+VLIDORT - Number of atmospheric layers
+33
+
+VLIDORT - Number of fine layers (outgoing sphericity correction only)
+2
+
+VLIDORT - Number of scattering matrix expansion coefficients
+2
+
+Accuracy input
+==============
+
+VLIDORT - Fourier series convergence
+0.001
+
+VLIDORT - Zenith tolerance level
+0.001
+
+Solar beam inputs
+=================
+
+VLIDORT - Solar flux constant
+1.0
+
+VLIDORT - Number of solar zenith angles
+1
+
+VLIDORT - Solar zenith angles (degrees)
+25.0
+
+Pseudo-spherical inputs
+=======================
+
+VLIDORT - Earth radius (km)
+6371.0
+
+VLIDORT - Refractive index parameter
+0.000288
+
+User defined outputs (Geometry, optical depths or level boundaries)
+===================================================================
+VLIDORT - Input geometry specification height [km]
+0.0
+
+VLIDORT - Number of user-defined relative azimuth angles
+1
+
+VLIDORT - User-defined relative azimuth angles
+158.77
+
+VLIDORT - Number of user-defined stream angles
+1
+
+VLIDORT - User-defined stream angles
+10.0
+
+VLIDORT - Number of user-defined vertical output levels
+1
+
+VLIDORT - User-defined vertical output levels
+0.0
+
+
+####################################### EXTRA STUFF for LINEARIZATION
+
+VLIDORT - Simulation only?
+f
+
+VLIDORT - Atmospheric profile weighting functions?
+t
+
+VLIDORT - Atmospheric column weighting functions?
+f
+
+VLIDORT - Surface property weighting functions?
+t
+
+VLIDORT - Atmospheric profile weighting functions, total number
+1
+
+VLIDORT - Atmospheric column weighting functions, total number
+1
+
+VLIDORT - Atmospheric profile Jacobian names (character*31)
+Layer trace gas column amount--
+Layer aerosol extinction TAU---
+
+VLIDORT - Atmospheric column Jacobian names (character*31)
+Total trace gas column amount--
+Total aerosol extinction TAU---
+
+VLIDORT - Do Lambertian albedo weighting function?
+t
+
+VLIDORT - Kernels, indices, # pars, Jacobian flags
+Cox-Munk    9 2  T   T T T
+
+(Above statement is Formatted. (  A10, I3, I2, 1X, L2, 2X, 3L2 )
+
+VLIDORT - Surface Jacobian names (character*22)
+Kernel Amplitude------
+Mean-slope-squared----
+Relative refindex-----
+
+
+
+

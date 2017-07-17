@@ -1,0 +1,295 @@
+LIDORT - Do full radiance calculation?
+T
+
+LIDORT - Do single scatter correction?
+T
+
+LIDORT - Do direct beam correction?
+F
+
+LIDORT - Output multiple scatter layer source functions?
+F
+
+LIDORT - Perform double convergence test?
+F
+
+LIDORT - Include direct beam?
+T
+
+LIDORT - Use classical beam solution?
+T
+
+LIDORT - Plane-parallel treatment of direct beam?
+F
+
+LIDORT - Perform internal Chapman function calculation?
+T
+
+LIDORT - Beam path with refractive atmosphere?
+F
+
+LIDORT - Rayleigh atmosphere only?
+F
+
+LIDORT - Isotropic atmosphere only?
+F
+
+LIDORT - No azimuth dependence in the solution?
+F
+
+LIDORT - Compute all Fourier components?
+F
+
+LIDORT - Include Delta-M scaling?
+T
+
+LIDORT - Solution saving mode?
+T
+
+LIDORT - Boundary value problem telescoping mode?
+T
+
+LIDORT - Upwelling output?
+T
+
+LIDORT - Downwelling output?
+F
+
+LIDORT - Include quadrature angles in output?
+F
+
+LIDORT - User-defined stream angles?
+T
+
+LIDORT - User-defined optical depths?
+T
+
+LIDORT - Layer boundary optical depths?
+F
+
+LIDORT - Generate mean value output additionally?
+F
+
+LIDORT - Generate only mean value output?
+F
+
+LIDORT - Debug write?
+F
+
+LIDORT - Input control write?
+F
+
+LIDORT - Input scenario write?
+F
+
+LIDORT - Fourier component output write?
+F
+
+LIDORT - Results write?
+F
+
+LIDORT - filename for input write
+idort_myproblem.input
+
+LIDORT - filename for scenario write
+LIDORT_myproblem.scenario
+
+LIDORT - Fourier output filename
+LIDORT_myproblem.fourier
+
+LIDORT - filename for main output
+LIDORT_myproblem.result
+
+
+LIDORT - Lambertian surface?
+T 
+
+LIDORT - Lambertian (isotropic) input albedo
+0.1
+
+LIDORT - Include surface emission?
+F
+
+LIDORT - Number of bidirectional reflectance kernels
+1
+
+LIDORT - Number of bidirectional reflectance streams
+1
+
+LIDORT - Kernel names, indices, amplitudes, # parameters, parameters
+
+
+
+**** Part 3. Group (B) Variables in LIDORT_INPUTS.VARS ****
+
+LIDORT - Number of half-space streams
+8
+
+LIDORT - Number of atmospheric layers
+33
+
+LIDORT - Number of input Legendre moments
+16
+
+LIDORT - Fourier series convergence
+0.001
+
+LIDORT - Zenith tolerance level
+0.00001
+
+LIDORT - Solar flux constant
+1.0
+
+LIDORT - Number of solar zenith angles
+1
+
+LIDORT - TOA solar zenith angles (degrees)
+50.0
+
+LIDORT - Earth radius (km)
+6371.0
+
+LIDORT - Refractive index parameter
+0.000288
+
+LIDORT - Number of user-defined relative azimuth angles
+1
+
+LIDORT - User-defined relative azimuth angles
+90.0
+
+LIDORT - Number of user-defined stream angles
+1
+
+LIDORT - User-defined stream angles
+10.0
+
+LIDORT - Number of user-defined optical depths
+1
+
+LIDORT - User-defined optical depths
+0.0
+
+LIDORT - Number of layer boundary optical depths
+1
+
+LIDORT - Which layer boundaries for optical depth
+0
+
+****** linearization control ***********
+
+LIDORT - Simulation only?
+F
+
+LIDORT - Atmospheric profile weighting functions?
+T
+
+LIDORT - Surface property weighting functions?
+T
+
+LIDORT - Surface emission weighting functions?
+F
+
+LIDORT - Do Lambertian albedo weighting function?
+T
+
+LIDORT - Atmospheric weighting functions, total number
+2
+
+LIDORT - Atmospheric weighting function names (character*31)
+ozone volume mixing ratio------
+aerosol extinction coefficient-
+aerosol scattering coefficient-
+cloud extinction coefficient---
+
+LIDORT - Surface weighting function names (character*22)
+lambertian albedo
+
+LIDORT - Atmospheric weighting functions, layer control
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
+T 1
